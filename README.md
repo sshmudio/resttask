@@ -1,7 +1,7 @@
 ### Start ###
 
 1. Clone this repo
-2. cd code && docker-compose up
+2. cd resttask && docker-compose up
 
 
 ### api edpoints ###
