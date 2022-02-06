@@ -53,24 +53,24 @@ DATABASES = {
         'HOST': os.environ.get('DB_HOST'),
         'PORT': 5432
     },
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'testtask',
-        'USER': 'usertask',
-        'PASSWORD': 'q1dhN0eD',
-        'HOST': 'localhost',
-        'PORT': 5432,
-    },
-    'test': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'test_psqldb',
-        'USER': 'psqlusr',
-        'HOST': 'localhost',
-        'PORT': 5432,
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'testtask',
+#         'USER': 'usertask',
+#         'PASSWORD': 'q1dhN0eD',
+#         'HOST': 'localhost',
+#         'PORT': 5432,
+#     },
+#     'test': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'test_psqldb',
+#         'USER': 'psqlusr',
+#         'HOST': 'localhost',
+#         'PORT': 5432,
 
 
 
-    },
+#     },
 
 }
 AUTH_PASSWORD_VALIDATORS = [
