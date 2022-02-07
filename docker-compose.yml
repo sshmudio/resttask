@@ -9,10 +9,14 @@ services:
       - POSTGRES_PASSWORD=postgres
     ports:
       - "5432:5432"
+    volumes:
+      - .:/code
+
   web:
     build: .
-    command: manage.py makemigrations apiusers
-    command: manage.py migrate apiusers
+    command: python manage.py makemigrations apiusers
+    command: python manage.py migrate apiusers
+    command: python manage.py migrate --noinput
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/code
@@ -25,3 +29,11 @@ services:
       - POSTGRES_PASSWORD=postgres
     depends_on:
       - db
+
+  # migration:
+  #   image: web
+  #   command: python manage.py migrate --noinput
+  #   volumes:
+  #     - .:/code
+  #   depends_on:
+  #     - db

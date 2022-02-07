@@ -38,11 +38,9 @@ class UserDetail(APIView):
             'password': make_password(request.data.get('password'))
         }
         serializer = UserSerializers(data=kw)
-
-        if serializer.is_valid(raise_exception=True):
-            serializer.save()
-            return Response(serializer.data)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response({'users': serializer.data})
 
     def put(self, request, pk):
         r = self.get_object(pk)

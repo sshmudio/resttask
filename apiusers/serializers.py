@@ -2,11 +2,6 @@ from rest_framework import serializers
 from apiusers.models import Users
 
 
-# class UserSerializers(serializers.ModelSerializer):
-#     class Meta:
-#         model = Users
-#         fields = '__all__'
-
 class UserSerializers(serializers.ModelSerializer):
     class Meta:
         model = Users
@@ -14,3 +9,5 @@ class UserSerializers(serializers.ModelSerializer):
 
     def create(self, validated_data):
         return Users.objects.create(**validated_data)
+
+    # def update(self, instance, validate_data):
